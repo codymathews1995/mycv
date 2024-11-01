@@ -29,8 +29,8 @@ This project is a work in progress and is set up in a way to help me develop it 
 
 1. Clone the repository:
    ```python
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/codymathews1995/mycv.git
+   cd mycv
     ```
 
 2. Create virtual environment:
