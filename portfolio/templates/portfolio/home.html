@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+    </nav>
+    <section>
+        <h1>Welcome to My Portfolio</h1>
+        {% load static %}
+        <img src="{{ MEDIA_URL }}me.webp" alt="My profile image" style="max-width:25%;">
+    </section>
+    <section>
+        <h2>Professional Experiences</h2>
+        <ul>
+            {% for experience in experiences %}
+                <li>
+                    <strong>{{ experience.job_title }}</strong> at {{ experience.company_name }} ({{ experience.start_date }}{% if experience.end_date %} - {{ experience.end_date }}{% else %} - Present{% endif %})
+                    <p>{{ experience.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Educational Experiences</h2>
+        <ul>
+            {% for education in education %}
+                <li>
+                    <strong>{{ education.degree }}</strong> at {{ education.school }} ({{ education.start_date }}{% if education.end_date %} - {{ education.end_date }}{% else %} - Present{% endif %})
+                    <p>{{ education.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>
+                    <strong>{{ skill.skill }}</strong>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
+
